@@ -1,0 +1,132 @@
+:root {
+  --transition-time: 900ms;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-shadow: 0 10px 30px rgba(2, 6, 23, 0.12);
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: var(--font-sans);
+}
+
+.wrap {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.stage {
+  width: 100%;
+  max-width: 980px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.sky {
+  position: relative;
+  height: 320px;
+  background: transparent;
+  transition: background var(--transition-time) linear;
+}
+
+.orb {
+  position: absolute;
+  width: 88px;
+  height: 88px;
+  top: 24px;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 18px rgba(2, 6, 23, 0.18));
+  transition: left var(--transition-time) linear,
+              top var(--transition-time) linear,
+              opacity var(--transition-time) linear,
+              transform var(--transition-time) linear;
+}
+
+.card {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: var(--card-bg);
+  backdrop-filter: blur(6px);
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.greeting {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0b1220;
+}
+
+.sub {
+  font-size: 13px;
+  color: #334155;
+}
+
+.time {
+  font-family: ui-monospace, Menlo, Monaco, "Roboto Mono", monospace;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.right {
+  text-align: right;
+  min-width: 180px;
+}
+
+.date {
+  font-size: 14px;
+  color: #334155;
+}
+
+.stats {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+}
+
+.stat {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #0b1220;
+  font-size: 14px;
+  box-shadow: 0 4px 14px rgba(2, 6, 23, 0.06);
+}
+
+.ground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 68px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(3,7,18,0.35) 60%, rgba(3,7,18,0.5) 100%);
+}
+
+@media (max-width: 540px) {
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .right {
+    text-align: left;
+    width: 100%;
+  }
+  .orb {
+    width: 68px;
+    height: 68px;
+  }
+}

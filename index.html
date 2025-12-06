@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clock WebApp</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body>
+  <div class="wrap" id="wrap">
+    <div class="stage">
+      <div class="sky" id="sky">
+        <div class="orb" id="orb"></div>
+        <div class="ground"></div>
+      </div>
+
+      <div class="card">
+        <div class="left">
+          <div class="greeting" id="greeting">Hello</div>
+          <div class="sub">Live time with changing background.</div>
+
+          <div class="stats">
+            <div class="stat" id="hourStat">-- h</div>
+            <div class="stat" id="minStat">-- m</div>
+            <div class="stat" id="secStat">-- s</div>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="time" id="time">--:--:--</div>
+          <div class="date" id="date">Loading date...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
